@@ -8,6 +8,7 @@ while not done:
     ser.timeout = 5
     current_char = ser.read(20)
     print("Leitura encerrada!")
+    current_char = "".join( chr(x) for x in current_char)
     print("Resultado: " + current_char)
     """ # check for equals sign
     if current_char == b'=':
