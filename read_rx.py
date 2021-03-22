@@ -4,8 +4,11 @@ ser = serial.Serial("/dev/ttyS0", baudrate=2000000)
 readings = []
 done = False
 while not done:
-    current_char = ser.read()
-    print(current_char)
+    print("Iniciando leitura!")
+    ser.timeout = 5
+    current_char = ser.read(20)
+    print("Leitura encerrada!")
+    print("Resultado: " + current_char)
     """ # check for equals sign
     if current_char == b'=':
         reading = ser.read(8)
